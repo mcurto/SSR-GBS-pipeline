@@ -1,4 +1,4 @@
-#SSR-GBS pipeline
+# SSR-GBS pipeline
 
 ﻿The SSR-GBS pipeline contains a set of scripts that can be used to analyze SSR-GBS sequence files as described in Tibihika et al (2019) and Curto et al. (2019).
 Impute files should be in fastq format where paired reads have been merged (see Curto et al. 2019 for more details). Each file should correspond to a different sample.
@@ -7,12 +7,12 @@ The way the pipeline is made it will only work in unix based operating systems s
 The pipeline is devided in two parts. A first one where a codominat matrix is produced with genotypes based on allele length is produced and a part where the gentypes are based on sequence composition. It is strognly advised that the length based matrix is manually quality controled using the length profiles histograms produced in the end of the first step. For more details please see Curto et al. (2019). The first part is done by running the scripts primer_demultiplex.py, CountLengths.sh, and Rscript_Markerlength_develop_Color.R. The senconf part by running Sequence_Allele_Call.py.
 
 
-##References
+## References
 Tibihika, P. D., Curto, M., Dornstauder-Schrammel, E., Winter, S., Alemayehu, E., Waidbacher, H., & Meimberg, H. (2019). Application of microsatellite genotyping by sequencing (SSR-GBS) to measure genetic diversity of the East African Oreochromis niloticus. Conservation Genetics, 20(2), 357-372.
 Curto, M., Winter, S., Seiter, A., Schmid, L., Scheicher, K., Barthel, L. M., ... & Meimberg, H. (2019). Application of a SSR‐GBS marker system on investigation of European Hedgehog species and their hybrid zone dynamics. Ecology and evolution, 9(5), 2814-2832.
 
 
-##Requirements
+## Requirements
 Unix based operating system
 python 2 or 3
 Biopython
@@ -20,13 +20,13 @@ R version 3.4.1 or newer, packages reshape and reshape2 (Wickham 2007) will be i
 
 
  
-##primer_demultiplex.py
+## primer_demultiplex.py
 
-###Description
+### Description
 This script demultiplexes merged fastq files according to primer content. The outputs are one fastq file per sample and locus. This script allows for a user specified threshold of maximum number of mismatches between the primer and the reads. Only reads with a mismatch between sequence and both primers below to threshold are kept. A minimum length threshold is also necessary to be defined. 
 
 
-###How to run:
+### How to run:
 
 python primer_demultiplex.py [1] [2] [3] [4] [5]
 
@@ -45,9 +45,9 @@ Markers should be named in the following way: MarkerName_RepetitionMotif (ex: HH
 
 
 
-##CountLengths.sh
+## CountLengths.sh
 
-###Description
+### Description
 
 Per fastq file, it counts the number of occurrences of each sequence length present. It outputs this information in a space separated text file being the first column the length and the second the number of occurrences. Example:
 
@@ -56,7 +56,7 @@ Per fastq file, it counts the number of occurrences of each sequence length pres
 418	276
 423	282
 
-###How to run
+### How to run
 
 sh CountLengths.sh [1] [2]
 
@@ -66,12 +66,12 @@ sh CountLengths.sh [1] [2]
 
 
 
-##Rscript_Markerlength_develop_Color.R
+## Rscript_Markerlength_develop_Color.R
 
 Requirements: R version 3.4.1 or newer, packages reshape and reshape2 (Wickham 2007) will be installed automatically by the R script.
 
 
-###Description
+### Description
 This script uses sequence length counts to call alleles and define genotypes. A homozygote genotype is considered if the relative read count of the most abundant allele is larger than the user defined alpha value (e.g. 0.7). A heterozygote genotype is considered when the sum of the relative abundance of two most abundant read lengths exceeds the user defined alpha value 
 (i) and if the difference in length of the potential alleles is larger than one time the repeat motif length. 
 (ii) and if the two most abundant potential alleles only differ in one repeat size length, the less abundant allele is considered true if it is longer than the most abundant allele. 
@@ -79,7 +79,7 @@ This script uses sequence length counts to call alleles and define genotypes. A 
 (iv) in addition, we also considered point mutations which lead to non-integer multiples of the repeat length, if their relative abundance was at least 0.6 of the most abundant allele. 
 If these criteria are not met the sample is considered for manual control. Genotypes are saved in a coma separate file and length histograms are plotted in a pdf file highlighting the called alleles with different colors: blue for the homozygous allele, green for the alleles in heterozygous samples and black for the other sequence lengths.
 
-###How to run:
+### How to run:
 
 Rscript --vanilla Rscript_Markerlength_develop_Color.R [1] [2] [3] [4] [5] [6] [7] [8]
 
@@ -100,7 +100,7 @@ Rscript --vanilla Rscript_Markerlength_develop_Color.R [1] [2] [3] [4] [5] [6] [
 
 [8] Maximum allele size length for plotting the results
 
-###References
+### References
 Wickham, H. (2007). Reshaping Data with the reshape Package. Journal of Statistical Software, 21(12), 1-20. URL http://www.jstatsoft.org/v21/i12/.
 
 ###Outputs
@@ -109,12 +109,12 @@ Two output files are produced. A csv file contaning containg the length alleles.
 
 
 
-##Sequence_Allele_Call.py
+## Sequence_Allele_Call.py
 
-###Description
+### Description
 This scripts replaces the script 4 to 7 from Tibihika et al. 2028. It takes alleles saved in the csv file produced by Rscript_Markerlength_develop_Color.R and extract the corresponding reads, makes consensus sequence for each length-based allele, detects possible SNP variation and calls alleles based on sequence information. For each of these steps a new directory is created to save output files. 
 
-###How to run
+### How to run
 
 python extract_alleles_of_a_certain_length_v2.py [1]
 
@@ -138,7 +138,8 @@ AlleleList =
 out_pre = Test22-06-2020
 
 
-#####Description of parameter file options:
+##### Description of parameter file options:
+
 The SSR-GBS_pipeline_paramter_file.txt is an example of a parameter file
 
 “LengthAllelels” is a coma separated text file containing length genotypes. This file should contain a header containing the marker information. The next lines it contains the genotype information. Th first column should contain the sample names while the remaining the genotype information. Two columns per markers should be added allowing for heterozygote genotypes. Missing data should be coded as 0.
@@ -186,7 +187,7 @@ AF12_TTTC
 “out_pre” is a prefix to save the final output files.
 
 
-###Output files:
+### Output files:
 
 There are four directories created to save output files:
 
