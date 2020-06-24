@@ -103,7 +103,7 @@ Rscript --vanilla Rscript_Markerlength_develop_Color.R [1] [2] [3] [4] [5] [6] [
 ### References
 Wickham, H. (2007). Reshaping Data with the reshape Package. Journal of Statistical Software, 21(12), 1-20. URL http://www.jstatsoft.org/v21/i12/.
 
-###Outputs
+### Outputs
 Two output files are produced. A csv file contaning containg the length alleles. Alleles correspond amplicon length. If there no reads a genotype with "empty" will be save, if the read count for that marker sample combination is too low "too little reads" will be saved. In case the gentype does not follow the the critera defined in Curto et al. 2019 is marked for manual control by adding "_man check". 
 
 
