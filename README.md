@@ -195,7 +195,8 @@ There are four directories created to save output files:
 
 “ConsensusOut”: Files containing the consensus sequence for each length allele. Two files per consensus sequence are produced. A fasta file with sequence, and a .freq file with the nucleotide frequency per position. The latter is a tab separated file with six columns: First the sequence position; Second to fifth columns the relative frequency of each nucleotide; Sixth column the relative frequency of uncalled bases (“N”). 
 
-Here it is an example:
+Here it is an example
+
 pos.	A	C	G	T	N
 1	1.0	0.0	0.0	0.0	0.0
 2	0.0	0.0	1.0	0.0	0.0
