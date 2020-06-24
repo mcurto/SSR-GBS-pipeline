@@ -170,19 +170,28 @@ Marker name
 \
 Where 1 and 2 are allele corresponding to Sequence1 and Sequence2, respectively. “\” is used to separate markers.
 
-Example:
 
-For example:
+For example
+
 AF10_TGCC
+
 1:	CTCCCCATCGACGGTAACGCTCTCTCCTGCCCCT…
+
 2:	CTCCCCATCGACGGTAACGCTCTCTCCTGCCCCT…
+
 3:	CTCCCCATCGACGGTAACGCTCTCTCCTGCCCCT…
+
 \
+
 
 AF12_TTTC
+
 1:	GGCCTATTGTGTTCGAAATTATGCAGGCTCACCGAAGCTTCTCGCTTATCGTTGT…
+
 2:	GGCCTATTGTGTTCGAAATTATGCAGGCTCACCGAAGCTTCTCGCTTATCGTTGTG…
+
 \
+
 
 “out_pre” is a prefix to save the final output files.
 
@@ -198,16 +207,27 @@ There are four directories created to save output files:
 Here it is an example
 
 pos.	A	C	G	T	N
+
 1	1.0	0.0	0.0	0.0	0.0
+
 2	0.0	0.0	1.0	0.0	0.0
+
 3	0.0	0.0	0.0	1.0	0.0
+
 4	0.0	1.0	0.0	0.0	0.0
+
 5	0.0	0.0	0.0	1.0	0.0
+
 6	1.0	0.0	0.0	0.0	0.0
+
 7	0.0	0.0	1.0	0.0	0.0
+
 8	0.0	0.0	0.0	1.0	0.0
+
 9	0.0	0.0	0.0	1.0	0.0
+
 10	0.0	0.0	0.0	1.0	0.0
+
 
 The number of reads used to make the consensus sequence and the consensus threshold is added in the file name. For example: AF2_GGAA_EO-616_Al_352_C_1917_70.fasta corresponds to a 70% consensus sequence produced from 1917 reads.
 
