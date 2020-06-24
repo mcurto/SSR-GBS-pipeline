@@ -1,0 +1,22 @@
+# matrix containing lengths
+LengthAllelels = OutDir_20200520/MarkerPlots/markermatrix.csv
+
+# Directory to save output files
+WorkingDir = OutDir_20200520/
+
+# Directory containing demultiplexed sequences (output from script Script number 1: primer_demultiplex.py)
+SeparatOut = OutDir_20200520/SeparatOut/
+
+# consensus threashold in float format (eg. 0.7)
+consThreashold = 0.7
+
+# minimum number of reads per consensus sequence for allele call (integer)
+minCount = 10
+
+# If there is an allelel list already this can be used as a reference for the allele call
+AlleleList = 
+
+
+# Prefix name for allele list and matrix file
+out_pre = Test22-06-2020
+
