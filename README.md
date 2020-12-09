@@ -131,6 +131,7 @@ WorkingDir = OutDir_20200520/
 SeparatOut = OutDir_20200520/SeparatOut/
 
 consThreashold = 0.7
+
 minCount = 10
 
 AlleleList = 
