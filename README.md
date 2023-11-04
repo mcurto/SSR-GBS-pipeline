@@ -88,13 +88,13 @@ Rscript --vanilla Rscript_Markerlength_develop_Color.R [1] [2] [3] [4] [5] [6] [
 
 [2] Minimum count of the total reads for a genotype to be considered.
 
-[3] Path to directory where pdf file with length counts histograms will be saved.
+[3] Path to pdf file where the length counts histograms will be saved.
 
 [4] Alpha threshold for defining homo- and heterozygotes genotypes.
 
-[5] Path to Csv matrix file containing genotypes of markers of the respective samples
+[5] Path to csv file where the length gentotype matrix file will be saved
 
-[6] Path to Csv file containing three columns with sample and marker name and respective allele
+[6] Path to csv file where sample and marker and allele information will be saved
 
 [7] Minimum allele size length for plotting the results
 
