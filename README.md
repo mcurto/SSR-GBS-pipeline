@@ -9,13 +9,17 @@ The pipeline is devided in two parts. A first one where a codominat matrix is pr
 
 ## References
 Tibihika, P. D., Curto, M., Dornstauder-Schrammel, E., Winter, S., Alemayehu, E., Waidbacher, H., & Meimberg, H. (2019). Application of microsatellite genotyping by sequencing (SSR-GBS) to measure genetic diversity of the East African Oreochromis niloticus. Conservation Genetics, 20(2), 357-372.
+
 Curto, M., Winter, S., Seiter, A., Schmid, L., Scheicher, K., Barthel, L. M., ... & Meimberg, H. (2019). Application of a SSR‐GBS marker system on investigation of European Hedgehog species and their hybrid zone dynamics. Ecology and evolution, 9(5), 2814-2832.
 
 
 ## Requirements
 Unix based operating system
+
 python 2 or 3
+
 Biopython
+
 R version 3.4.1 or newer, packages reshape and reshape2 (Wickham 2007) will be installed automatically by the R script number 3.
 
 
